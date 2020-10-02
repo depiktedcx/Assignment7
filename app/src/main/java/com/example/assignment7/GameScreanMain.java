@@ -8,13 +8,17 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 
 public class GameScreanMain extends AppCompatActivity {
 
 
     Paint piant2 = new Paint();
+
+    String TAG_Gestrue="Gestrue" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,16 +44,34 @@ public class GameScreanMain extends AppCompatActivity {
 
     public class GraphicsViewGame extends View{
 
-       // private GestureDetector gestureDetector_1;
+       private GestureDetector gestureDetector_1;
 
 
 
         public GraphicsViewGame(Context context) {
             super(context);
             piant2.setColor(getColor(R.color.black_overlay));
-           // gestureDetector_1 = new
+            gestureDetector_1 = new GestureDetector(context,new MyGestureListener());
 
         }
+
+
+        class MyGestureListener extends GestureDetector.SimpleOnGestureListener {
+            @Override
+            public boolean onDown(MotionEvent e) {
+                Log.i(TAG_Gestrue, "onDOWN");
+                return true;
+            }
+            @Override
+            public boolean onFling(MotionEvent e1, MotionEvent e2,
+                                   float velocityX, float velocityY) {
+                Log.i(TAG_Gestrue, "flling~~~~~~~~~~~~~~~~");
+                return true;
+            }
+        }
+
+
+
 
         @Override
         protected void onDraw(Canvas canvas) {
