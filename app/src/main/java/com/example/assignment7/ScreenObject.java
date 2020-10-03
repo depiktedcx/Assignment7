@@ -14,6 +14,9 @@ public class ScreenObject {
     protected int []speedx;
     protected int []speedy;
 
+    protected  int nextx=0;
+    protected int nexty=0;
+
 
     public  ScreenObject(){
 
@@ -29,6 +32,10 @@ public class ScreenObject {
     public boolean CaculateSpeed(){
 
         return false;
+
+    }
+
+    public  void  hit(){
 
     }
 

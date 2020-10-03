@@ -2,8 +2,7 @@ package com.example.assignment7;
 
 public class Ball extends ScreenObject {
 
-    int nextx;
-    int nexty;
+
 
     public  Ball( int []speedx_1,int []speedy_1){
 
@@ -22,10 +21,6 @@ public class Ball extends ScreenObject {
           y+=speedy[nexty];
 
 
-
-
-
-
             if(speedy.length-1 >nexty&&speedy[nexty]!=0){
                 nexty++;
 
@@ -34,13 +29,6 @@ public class Ball extends ScreenObject {
             nextx++;
 
         }
-
-
-
-
-
-
-
 
     }
 
@@ -53,7 +41,7 @@ public class Ball extends ScreenObject {
 
     }
 
-
+    @Override
     public  void  hit(){
 
     }
