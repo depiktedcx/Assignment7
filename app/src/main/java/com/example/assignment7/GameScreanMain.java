@@ -18,7 +18,7 @@ public class GameScreanMain extends AppCompatActivity {
 
     Paint piant2 = new Paint();
 
-    String TAG_Gestrue="Gestrue" ;
+    String TAG_1="TAG_Flling" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,21 +55,32 @@ public class GameScreanMain extends AppCompatActivity {
 
         }
 
+        @Override
+        public boolean onTouchEvent(MotionEvent event) {
+
+            if(gestureDetector_1.onTouchEvent(event)){
+                return true;
+
+            }
+            return super.onTouchEvent(event);
+        }
+
 
         class MyGestureListener extends GestureDetector.SimpleOnGestureListener {
             @Override
             public boolean onDown(MotionEvent e) {
-                Log.i(TAG_Gestrue, "onDOWN");
+                Log.i(TAG_1, "onDOWN");
                 return true;
             }
             @Override
             public boolean onFling(MotionEvent e1, MotionEvent e2,
                                    float velocityX, float velocityY) {
-                Log.i(TAG_Gestrue, "flling~~~~~~~~~~~~~~~~");
+                Log.i(TAG_1, "flling~~~~~~~~~~~~~~~~");
+                Log.i(TAG_1,"onFling vwlocity x:  "+velocityX);
+                Log.i(TAG_1,"onFling vwlocity y:  "+velocityY);
                 return true;
             }
         }
-
 
 
 
