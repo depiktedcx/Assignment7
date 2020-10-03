@@ -24,7 +24,9 @@ public class ScreenObject {
     }
 
 
-    public void CaculateSpeed(){
+    public boolean CaculateSpeed(){
+
+        return false;
 
     }
 
