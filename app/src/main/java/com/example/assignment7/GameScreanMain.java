@@ -29,6 +29,7 @@ public class GameScreanMain extends AppCompatActivity {
     int flingY = 0;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,7 +113,7 @@ public class GameScreanMain extends AppCompatActivity {
 
             canvas.drawCircle(startx+flingx/3, starty+flingY/4, 40, piant2);
 
-            invalidate();
+            //invalidate();
 
         }
     }
