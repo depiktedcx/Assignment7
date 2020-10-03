@@ -4,8 +4,12 @@ public class Target extends ScreenObject {
 
     int constantSpeedX=10;
 
-    public  Target( ){
+    public  Target(int x_, int y_){
 
+        x =x_;
+        y=y_;
+        sizeX=45;
+        sizeY = 45;
 
 
         Name= "Target";

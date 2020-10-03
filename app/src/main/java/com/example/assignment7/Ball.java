@@ -4,10 +4,14 @@ public class Ball extends ScreenObject {
 
 
 
-    public  Ball( int []speedx_1,int []speedy_1){
+    public  Ball( int []speedx_1,int []speedy_1,int x_, int y_){
 
+        x =x_;
+        y=y_;
         this.speedx =speedx_1;
         this.speedy =speedy_1;
+        sizeX=55;
+        sizeY=55;
 
         Name= "Ball";
 
