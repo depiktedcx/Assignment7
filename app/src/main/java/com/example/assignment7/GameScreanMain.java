@@ -20,6 +20,15 @@ public class GameScreanMain extends AppCompatActivity {
 
     String TAG_1="TAG_Flling" ;
 
+
+    int startx=0;
+    int starty =0 ;
+
+
+    int flingx= 0;
+    int flingY = 0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,9 +84,14 @@ public class GameScreanMain extends AppCompatActivity {
             @Override
             public boolean onFling(MotionEvent e1, MotionEvent e2,
                                    float velocityX, float velocityY) {
+
+                flingx = (int) velocityX;
+                flingY = (int) velocityY;
+
                 Log.i(TAG_1, "flling~~~~~~~~~~~~~~~~");
                 Log.i(TAG_1,"onFling vwlocity x:  "+velocityX);
                 Log.i(TAG_1,"onFling vwlocity y:  "+velocityY);
+
                 return true;
             }
         }
@@ -87,7 +101,18 @@ public class GameScreanMain extends AppCompatActivity {
         @Override
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
-            canvas.drawCircle(100, 100, 76, piant2);
+
+            if (startx == 0){
+                startx =canvas.getWidth()/2;
+                starty= canvas.getHeight()-100;
+            }
+
+
+
+
+            canvas.drawCircle(startx+flingx/3, starty+flingY/4, 40, piant2);
+
+            invalidate();
 
         }
     }
