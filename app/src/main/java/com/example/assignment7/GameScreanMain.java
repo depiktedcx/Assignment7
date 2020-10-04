@@ -45,6 +45,10 @@ public class GameScreanMain extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(uiOptions);
 
 
+
+
+
+
         GraphicsViewGame graphicsView_1 = new GraphicsViewGame(this);
         ConstraintLayout constraintLayout = findViewById(R.id.gamepage);
         constraintLayout.addView(graphicsView_1);
@@ -89,6 +93,12 @@ public class GameScreanMain extends AppCompatActivity {
                 flingx = (int) velocityX;
                 flingY = (int) velocityY;
 
+
+                startx = startx+flingx/5;
+
+                starty = (int) (starty+(flingY/7.5));
+
+
                 Log.i(TAG_1, "flling~~~~~~~~~~~~~~~~");
                 Log.i(TAG_1,"onFling vwlocity x:  "+velocityX);
                 Log.i(TAG_1,"onFling vwlocity y:  "+velocityY);
@@ -106,14 +116,18 @@ public class GameScreanMain extends AppCompatActivity {
             if (startx == 0){
                 startx =canvas.getWidth()/2;
                 starty= canvas.getHeight()-100;
+
+                Log.i(TAG_1,"screensize x:  "+startx);
+                Log.i(TAG_1,"screensize y:  "+starty);
+
             }
 
 
 
 
-            canvas.drawCircle(startx+flingx/3, starty+flingY/4, 40, piant2);
+            canvas.drawCircle(startx ,starty, 40, piant2);
 
-            //invalidate();
+            invalidate();
 
         }
     }
