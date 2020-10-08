@@ -4,14 +4,13 @@ public class Ball extends ScreenObject {
 
 
 
-    public  Ball( int []speedx_1,int []speedy_1,int x_, int y_){
+    public  Ball(int x_, int y_){
 
         x =x_;
         y=y_;
-        this.speedx =speedx_1;
-        this.speedy =speedy_1;
-        sizeX=55;
-        sizeY=55;
+
+        sizeX=45;
+        sizeY=45;
 
         Name= "Ball";
 
@@ -48,6 +47,13 @@ public class Ball extends ScreenObject {
     @Override
     public  void  hit(){
 
+    }
+
+    public  void pass_Speed( int []speedx_1,int []speedy_1)
+    {
+
+        this.speedx =speedx_1;
+        this.speedy =speedy_1;
     }
 
 

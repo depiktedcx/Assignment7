@@ -29,11 +29,39 @@ public class GameScreanMain extends AppCompatActivity {
     int flingY = 0;
 
 
+    Target Target1;
+    Obstacles Obstacles1;
+    Obstacles Obstacles2;
+    Ball Ball1;
+
+
+
+
+
+    private void pass_location_to_ScreenObject(int screenX, int screenY){
+        Target1= new Target(screenX/2, 35);
+
+        Ball1 =new Ball(screenX/2,screenY/80);
+
+
+
+
+
+    }
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_screan);
+
+
+
+
 
 
 
@@ -126,6 +154,7 @@ public class GameScreanMain extends AppCompatActivity {
 
 
             canvas.drawCircle(startx ,starty, 40, piant2);
+            canvas.drawRect(0,500,startx/6,350,piant2);
 
             invalidate();
 
