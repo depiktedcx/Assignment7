@@ -19,8 +19,6 @@ public class ScreenObject {
 
 
     public  ScreenObject(){
-
-
     }
 
     public void Move(){

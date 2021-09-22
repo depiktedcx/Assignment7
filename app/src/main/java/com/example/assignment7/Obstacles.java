@@ -4,7 +4,7 @@ public class Obstacles extends ScreenObject {
 
 
     public  Obstacles(int x_, int y_,int size_X,int size_Y){
-
+        super();
         x =x_;
         y=y_;
 

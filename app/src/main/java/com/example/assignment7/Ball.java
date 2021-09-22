@@ -2,10 +2,8 @@ package com.example.assignment7;
 
 public class Ball extends ScreenObject {
 
-
-
     public  Ball(int x_, int y_){
-
+        super();
         x =x_;
         y=y_;
 
@@ -54,6 +52,13 @@ public class Ball extends ScreenObject {
 
         this.speedx =speedx_1;
         this.speedy =speedy_1;
+    }
+
+    public boolean isTouching(int x_, int y_){
+        if(x_ <= x + sizeX && x_ >= x - sizeX && y_ <= y + sizeY && y_ >= y - sizeY){
+            return true;
+        }
+        return false;
     }
 
 
